@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<rss version="2.0" xmlns:yweather="http://xml.weatherData.yahoo.com/ns/rss/1.0"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+    <channel>
+
+        <title>Yahoo! Weather - Paris, FR</title>
+        <link>
+            http://us.rd.yahoo.com/dailynews/rss/weatherData/Paris__FR/*http://weatherData.yahoo.com/forecast/FRXX0076_c.html
+        </link>
+        <description>Yahoo! Weather for Paris, FR</description>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 18 Nov 2011 11:59 am CET</lastBuildDate>
+        <ttl>60</ttl>
+        <yweather:location city="Paris" region="" country="France"/>
+        <yweather:units temperature="C" distance="km" pressure="mb" speed="km/h"/>
+        <yweather:wind chill="10" direction="0" speed="4.83"/>
+        <yweather:atmosphere humidity="100" visibility="7" pressure="1015.92" rising="2"/>
+        <yweather:astronomy sunrise="8:00 am" sunset="5:06 pm"/>
+        <image>
+            <title>Yahoo! Weather</title>
+            <width>142</width>
+            <height>18</height>
+            <link>http://weatherData.yahoo.com</link>
+            <url>http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif</url>
+        </image>
+        <item>
+            <title>Conditions for Paris, FR at 11:59 am CET</title>
+            <geo:lat>48.86</geo:lat>
+            <geo:long>2.34</geo:long>
+            <link>
+                http://us.rd.yahoo.com/dailynews/rss/weatherData/Paris__FR/*http://weatherData.yahoo.com/forecast/FRXX0076_c.html
+            </link>
+            <pubDate>Fri, 18 Nov 2011 11:59 am CET</pubDate>
+            <yweather:condition text="Sunny" code="32" temp="10" date="Fri, 18 Nov 2011 11:59 am CET"/>
+            <description><![CDATA[
+<img src="http://l.yimg.com/a/i/us/we/52/32.gif"/><br />
+<b>Current Conditions:</b><br />
+Sunny, 10 C<BR />
+<BR /><b>Forecast:</b><BR />
+Fri - Mostly Cloudy. High: 9 Low: 3<br />
+Sat - Partly Cloudy. High: 11 Low: 3<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weatherData/Paris__FR/*http://weatherData.yahoo.com/forecast/FRXX0076_c.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weatherData.com" >The Weather Channel</a>)<br/>
+]]></description>
+            <yweather:forecast day="Fri" date="18 Nov 2011" low="3" high="9" text="Mostly Cloudy" code="28"/>
+            <yweather:forecast day="Sat" date="19 Nov 2011" low="3" high="11" text="Partly Cloudy" code="30"/>
+            <guid isPermaLink="false">FRXX0076_2011_11_19_7_00_CET</guid>
+        </item>
+    </channel>
+</rss>
+        <!-- api10.weatherData.ch1.yahoo.com compressed/chunked Fri Nov 18 03:46:47 PST 2011 -->

@@ -1,0 +1,22 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/main.xhtml">
+    <ui:define name="content">
+        <h:outputScript library="js" name="location.js" />
+        <script type="text/javascript">
+            if (window.addEventListener)
+            {
+                window.addEventListener('load', getLocation, false);
+            } else if (window.attachEvent)
+            {
+                window.attachEvent('onload', getLocation);
+            }
+        </script>
+        <h:form id="searchForm">
+            <h:inputHidden value="#{weatherModel.latitude}" id="latitude"/>
+            <h:inputHidden value="#{weatherModel.longitude}" id="longitude"/>
+            <h:commandButton id="searchButton" styleClass="locationSearchButton"
+                             action="#{weatherController.loadWeather}" value="Search"/>
+        </h:form>
+        <h:outputText styleClass="loadMessage" value="Aquiring location...."/>
+    </ui:define>
+</ui:composition>

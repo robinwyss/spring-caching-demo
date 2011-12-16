@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arvo', serif;
+}
+
+.locationSearchButton {
+    display: none;
+}
+
+.loadMessage {
+    font-size: 100%;
+}
+
+/* Styling by weather code */
+
+.forecastCode0,
+.forecastCode1,
+.forecastCode2,
+.forecastCode3,
+.forecastCode4 {
+    background-color: #444444;
+    color: #eeeeee;
+}
+
+.forecastCode5,
+.forecastCode6,
+.forecastCode7,
+.forecastCode8,
+.forecastCode9,
+.forecastCode10,
+.forecastCode11,
+.forecastCode12,
+.forecastCode13,
+.forecastCode14,
+.forecastCode15,
+.forecastCode16,
+.forecastCode17,
+.forecastCode18{
+    background-color: #00b2ed;
+    color: #999999;
+}
+
+.forecastCode19,
+.forecastCode20,
+.forecastCode21,
+.forecastCode22,
+.forecastCode23,
+.forecastCode24,
+.forecastCode26,
+.forecastCode27,
+.forecastCode28,
+.forecastCode29,
+.forecastCode30 {
+    background-color: #aaaaaa;
+    color: #333333;
+}
+
+.forecastCode31,
+.forecastCode32,
+.forecastCode33,
+.forecastCode34,
+.forecastCode36 {
+    background-color: #ffed06;
+    color: #222222;
+}
+
+.forecastCode35,
+.forecastCode37,
+.forecastCode38,
+.forecastCode39,
+.forecastCode40,
+.forecastCode41,
+.forecastCode42,
+.forecastCode43,
+.forecastCode44,
+.forecastCode45,
+.forecastCode46,
+.forecastCode47 {
+    background-color: #757575;
+    color: #eeeeee;
+}
+
+.forecastCode3200 {
+    background-color: #000000;
+    color: #ffffff;
+}
