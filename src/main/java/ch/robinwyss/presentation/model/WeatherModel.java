@@ -17,6 +17,8 @@ public class WeatherModel
 	private String search;
 	private	String latitude;
 	private String longitude;
+	private long time;
+	private boolean editMode;
 
 	public WeatherData getWeatherData()
 	{
@@ -56,5 +58,25 @@ public class WeatherModel
 	public void setLongitude(String longitude)
 	{
 		this.longitude = longitude;
+	}
+
+	public long getTime()
+	{
+		return time;
+	}
+
+	public void setTime(long time)
+	{
+		this.time = time;
+	}
+
+	public boolean isEditMode()
+	{
+		return editMode;
+	}
+
+	public void setEditMode(boolean editMode)
+	{
+		this.editMode = editMode;
 	}
 }

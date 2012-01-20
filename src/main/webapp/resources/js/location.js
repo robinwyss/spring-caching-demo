@@ -21,3 +21,16 @@ function locationUnavailable(error)
 {
     alert("could no get location " + error);
 }
+
+function showLocationInput()
+{
+    document.getElementById('weatherForm:locationOutput').className = 'hidden';
+    document.getElementById('weatherForm:changeButton').className = 'hidden';
+    document.getElementById('weatherForm:locationInput').className = '';
+}
+
+function leaveEditMode()
+{
+    var btn = document.getElementById('weatherForm:leaveEditMode');
+    btn.click();
+}

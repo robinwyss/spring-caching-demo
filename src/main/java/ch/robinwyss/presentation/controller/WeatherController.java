@@ -8,7 +8,6 @@ import ch.robinwyss.service.location.LocationService;
 import ch.robinwyss.service.weather.WeatherService;
 import org.springframework.context.annotation.Scope;
 
-import javax.faces.application.ProjectStage;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -35,10 +34,29 @@ public class WeatherController
 
 	public String loadWeather()
 	{
+		long t = System.currentTimeMillis();
 		LocationData locationData = locationService.getLocation(weatherModel.getLatitude(), weatherModel.getLongitude());
 		WeatherData weatherData = weatherService.getWeather(locationData.getWoeid(), Unit.CELSIUS);
 		weatherModel.setWeatherData(weatherData);
-		return "weather";
+		String locationString = createLocationString(weatherData);
+		weatherModel.setSearch(locationString);
+		weatherModel.setTime(System.currentTimeMillis() - t);
+		return "weather?faces-redirect=true";
+	}
+
+	private String createLocationString(WeatherData weatherData)
+	{
+		String city = weatherData.getLocation().getCity();
+		String country = weatherData.getLocation().getCountry();
+		return  city + ", "+country;
+	}
+
+	public void edit(){
+		weatherModel.setEditMode(true);
+	}
+
+	public void leaveEditMode(){
+		weatherModel.setEditMode(false);
 	}
 
 }

@@ -3,6 +3,7 @@ package ch.robinwyss.service.location.yahoo;
 import ch.robinwyss.common.xml.YahooLocationExtractor;
 import ch.robinwyss.data.location.LocationData;
 import ch.robinwyss.service.location.LocationService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Scope;
 import org.xml.sax.SAXException;
 
@@ -30,8 +31,8 @@ public class YahooLocationWsClient implements LocationService
 	private String flagsParameter = "flags";
 	private String flags = "G";
 	private String appidParameter = "appid";
-//	private String appid = "dj0yJmk9SkIzQzVuRnNQWU5YJmQ9WVdrOWIyRlphVFY2Tm1zbWNHbzlOekF5TVRrME56WXkmcz1jb25zdW1lcnNlY3JldCZ4PWEw";
 
+	@Cacheable(value = "location", key = "#longitude + #latitude")
 	@Override
 	public LocationData getLocation(String longitude, String latitude)
 	{

@@ -1,5 +1,33 @@
-body {
+body,
+input[type=text]
+{
     font-family: 'Arvo', serif;
+    font-size: 18px;
+}
+
+#forecastSection,
+#forecastSection > div
+{
+    float: left;
+}
+
+#weatherForm\:locationInput
+{
+    width: auto;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.edit
+{
+    border: 1px solid #000000;
+}
+
+#weatherForm div
+{
+    padding: 2px;
 }
 
 .locationSearchButton {
@@ -82,4 +110,9 @@ body {
 .forecastCode3200 {
     background-color: #000000;
     color: #ffffff;
+}
+
+.hidden
+{
+    display: none;
 }

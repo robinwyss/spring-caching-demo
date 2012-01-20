@@ -14,7 +14,7 @@
     <context:component-scan base-package="ch.robinwyss"/>
 
     <!-- enable caching trough annotation -->
-    <cache:annotation-driven />
+    <cache:annotation-driven/>
 
     <!-- use infinispan as cache manager
     <bean id="cacheManager" class="org.infinispan.spring.provider.SpringEmbeddedCacheManagerFactoryBean"
@@ -22,11 +22,12 @@
     -->
     <!-- generic cache manager -->
     <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
-      <property name="caches">
-        <set>
-          <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="forecast"/>
-        </set>
-      </property>
+        <property name="caches">
+            <set>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="forecast"/>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="location"/>
+            </set>
+        </property>
     </bean>
 
 </beans>
