@@ -1,0 +1,20 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                template="/WEB-INF/templates/main.xhtml">
+    <h:form id="weatherForm">
+        <div id="condition">
+            <h:outputText styleClass="condition" value="#{weatherModel.weatherData.condition.text}"/>
+        </div>
+        <div id="temperature">
+            <h:outputText styleClass="temperature" value="#{weatherModel.weatherData.condition.temperature} &#176;"/>
+        </div>
+        <div id="location" class="#{weatherModel.editMode ? 'edit' : ''}">
+            <h:inputText size="30" onblur="leaveEditMode(this)" onfocus="enterEditMode(this)" id="locationInput"
+                         value="#{weatherModel.search}"/>
+        </div>
+        <div id="time">
+            <h:outputText styleClass="time" value="#{weatherModel.time}"/>ms
+        </div>
+        <h:commandButton action="#{weatherController.search}"/>
+        <h:commandLink action="#{weatherController.loadWeather}" value="refresh"/>&#160;
+    </h:form>
+</ui:composition>

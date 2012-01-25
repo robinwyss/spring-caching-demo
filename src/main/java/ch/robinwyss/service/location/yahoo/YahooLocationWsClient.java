@@ -32,7 +32,7 @@ public class YahooLocationWsClient implements LocationService
 	private String flags = "G";
 	private String appidParameter = "appid";
 
-	@Cacheable(value = "location", key = "#longitude + #latitude")
+	@Cacheable(value = "location", key = "#longitude.substring(0,7) +'_'+ #latitude.substring(0,7)")
 	@Override
 	public LocationData getLocation(String longitude, String latitude)
 	{

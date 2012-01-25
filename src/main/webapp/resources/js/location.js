@@ -29,8 +29,11 @@ function showLocationInput()
     document.getElementById('weatherForm:locationInput').className = '';
 }
 
-function leaveEditMode()
+function enterEditMode(element){
+    element.class = 'edit';
+}
+
+function leaveEditMode(element)
 {
-    var btn = document.getElementById('weatherForm:leaveEditMode');
-    btn.click();
+    element.class = 'display';
 }

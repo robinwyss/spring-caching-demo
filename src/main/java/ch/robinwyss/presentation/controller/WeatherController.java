@@ -32,7 +32,7 @@ public class WeatherController
 		this.locationService = locationService;
 	}
 
-	public String loadWeather()
+	public void loadWeather()
 	{
 		long t = System.currentTimeMillis();
 		LocationData locationData = locationService.getLocation(weatherModel.getLatitude(), weatherModel.getLongitude());
@@ -41,7 +41,12 @@ public class WeatherController
 		String locationString = createLocationString(weatherData);
 		weatherModel.setSearch(locationString);
 		weatherModel.setTime(System.currentTimeMillis() - t);
-		return "weather?faces-redirect=true";
+		weatherModel.setShowWeather(true);
+	}
+
+	public void search()
+	{
+		String search = weatherModel.getSearch();
 	}
 
 	private String createLocationString(WeatherData weatherData)
@@ -49,14 +54,6 @@ public class WeatherController
 		String city = weatherData.getLocation().getCity();
 		String country = weatherData.getLocation().getCountry();
 		return  city + ", "+country;
-	}
-
-	public void edit(){
-		weatherModel.setEditMode(true);
-	}
-
-	public void leaveEditMode(){
-		weatherModel.setEditMode(false);
 	}
 
 }

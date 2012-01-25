@@ -18,7 +18,7 @@ public class WeatherModel
 	private	String latitude;
 	private String longitude;
 	private long time;
-	private boolean editMode;
+	private boolean showWeather = false;
 
 	public WeatherData getWeatherData()
 	{
@@ -70,13 +70,13 @@ public class WeatherModel
 		this.time = time;
 	}
 
-	public boolean isEditMode()
+	public boolean isShowWeather()
 	{
-		return editMode;
+		return showWeather;
 	}
 
-	public void setEditMode(boolean editMode)
+	public void setShowWeather(boolean showWeather)
 	{
-		this.editMode = editMode;
+		this.showWeather = showWeather;
 	}
 }

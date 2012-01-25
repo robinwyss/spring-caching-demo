@@ -1,21 +1,41 @@
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/main.xhtml">
     <ui:define name="content">
-        <script type="text/javascript">
-            if (window.addEventListener)
-            {
-                window.addEventListener('load', getLocation, false);
-            } else if (window.attachEvent)
-            {
-                window.attachEvent('onload', getLocation);
-            }
-        </script>
-        <h:form id="searchForm">
-            <h:inputHidden value="#{weatherModel.latitude}" id="latitude"/>
-            <h:inputHidden value="#{weatherModel.longitude}" id="longitude"/>
-            <h:commandButton id="searchButton" styleClass="locationSearchButton"
-                             action="#{weatherController.loadWeather}" value="Search"/>
-        </h:form>
-        <h:outputText styleClass="loadMessage" value="Aquiring location...."/>
+        <h:panelGroup layout="block" styleClass="mainContent">
+            <h:panelGroup layout="block" rendered="#{!weatherModel.showWeather}">
+                <h:form id="searchForm">
+                    <h:inputHidden value="#{weatherModel.latitude}" id="latitude"/>
+                    <h:inputHidden value="#{weatherModel.longitude}" id="longitude"/>
+                    <h:commandButton id="searchButton" styleClass="locationSearchButton"
+                                     action="#{weatherController.loadWeather}" value="Search"/>
+                    <script type="text/javascript">
+                        getLocation();
+                    </script>
+                </h:form>
+                <h:outputText styleClass="loadMessage" value="Aquiring location...."/>
+            </h:panelGroup>
+            <h:panelGroup layout="block" rendered="#{weatherModel.showWeather}">
+                <h:form id="weatherForm">
+                    <div id="condition">
+                        <h:outputText styleClass="condition" value="#{weatherModel.weatherData.condition.text}"/>
+                    </div>
+                    <div id="temperature">
+                        <h:outputText styleClass="temperature"
+                                      value="#{weatherModel.weatherData.condition.temperature} &#176;"/>
+                    </div>
+                    <div id="location">
+                        <h:inputText size="30" onblur="leaveEditMode(this)" onfocus="enterEditMode(this)"
+                                     id="locationInput"
+                                     value="#{weatherModel.search}"/>
+                    </div>
+                    <div id="time">
+                        <h:outputText styleClass="time" value="#{weatherModel.time}"/>ms
+                    </div>
+                    <h:commandButton action="#{weatherController.search}" style="display: none;"/>
+                    <h:commandLink action="#{weatherController.loadWeather}" value="refresh"/>&#160;
+                </h:form>
+            </h:panelGroup>
+        </h:panelGroup>
     </ui:define>
 </ui:composition>

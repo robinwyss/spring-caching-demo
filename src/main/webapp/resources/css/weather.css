@@ -17,7 +17,14 @@ input[type=text]
     margin: 0px;
     border: 0px;
     padding: 0px;
-    width: 100%;
+}
+
+.mainContent
+{
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .edit
@@ -25,16 +32,23 @@ input[type=text]
     border: 1px solid #000000;
 }
 
+.display
+{
+    border: none;
+}
+
 #weatherForm div
 {
     padding: 2px;
 }
 
-.locationSearchButton {
+.locationSearchButton
+{
     display: none;
 }
 
-.loadMessage {
+.loadMessage
+{
     font-size: 100%;
 }
 
@@ -44,7 +58,8 @@ input[type=text]
 .forecastCode1,
 .forecastCode2,
 .forecastCode3,
-.forecastCode4 {
+.forecastCode4
+{
     background-color: #444444;
     color: #eeeeee;
 }
@@ -62,7 +77,8 @@ input[type=text]
 .forecastCode15,
 .forecastCode16,
 .forecastCode17,
-.forecastCode18{
+.forecastCode18
+{
     background-color: #00b2ed;
     color: #999999;
 }
@@ -77,7 +93,8 @@ input[type=text]
 .forecastCode27,
 .forecastCode28,
 .forecastCode29,
-.forecastCode30 {
+.forecastCode30
+{
     background-color: #aaaaaa;
     color: #333333;
 }
@@ -86,7 +103,8 @@ input[type=text]
 .forecastCode32,
 .forecastCode33,
 .forecastCode34,
-.forecastCode36 {
+.forecastCode36
+{
     background-color: #ffed06;
     color: #222222;
 }
@@ -102,12 +120,14 @@ input[type=text]
 .forecastCode44,
 .forecastCode45,
 .forecastCode46,
-.forecastCode47 {
+.forecastCode47
+{
     background-color: #757575;
     color: #eeeeee;
 }
 
-.forecastCode3200 {
+.forecastCode3200
+{
     background-color: #000000;
     color: #ffffff;
 }
