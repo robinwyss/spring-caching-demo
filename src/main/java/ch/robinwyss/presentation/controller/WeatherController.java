@@ -23,14 +23,12 @@ public class WeatherController
 {
 
 	private WeatherService weatherService;
-//	private WeatherModel weatherModel;
 	private LocationService locationService;
 
 	@Inject
 	public WeatherController(WeatherService weatherService, LocationService locationService)
 	{
 		this.weatherService = weatherService;
-//		this.weatherModel = weatherModel;
 		this.locationService = locationService;
 	}
 

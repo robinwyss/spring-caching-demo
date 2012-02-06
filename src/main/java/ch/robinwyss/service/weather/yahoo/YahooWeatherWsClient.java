@@ -39,6 +39,7 @@ public class YahooWeatherWsClient implements WeatherService
 	@Cacheable(value = "forecast", key = "#woeid")
 	public WeatherData getWeather(String woeid, Unit unit)
 	{
+        LOG.info("get weather for: " + woeid);
 		WeatherData weatherData = new WeatherData();
 		try
 		{
