@@ -1,0 +1,191 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite" xmlns:h="http://java.sun.com/jsf/html">
+<cc:interface>
+    <cc:attribute name="icon" required="true" />
+</cc:interface>
+<cc:implementation>
+    <h:panelGroup styleClass="icon sunny" layout="block" rendered="#{icon == 'sunny'}">
+        <div class="sun">
+            <div class="background"></div>
+            <div class="glow"></div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup class="icon partly-cloudy" layout="block" rendered="#{icon == 'partly-cloudy'}">
+        <div class="sun">
+            <div class="background"></div>
+            <div class="glow"></div>
+        </div>
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup styleClass="icon cloudy" layout="block" rendered="#{icon == 'cloudy'}">
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup styleClass="icon mostly-cloudy" layout="block" rendered="#{icon == 'mostly-cloudy'}">
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup styleClass="icon rainy" layout="block" rendered="#{icon == 'rain'}">
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+        <div class="rain">
+            <div class="range1">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+            <div class="range2">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+            <div class="range3">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+            <div class="range4">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup styleClass="icon heavy-rain" layout="block" rendered="#{icon == 'heavy-rain'}">
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+        <div class="rain">
+            <div class="range1">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+            <div class="range2">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+            <div class="range3">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+            <div class="range4">
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+                <div class="raindrop"></div>
+            </div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup styleClass="icon snowfall" layout="block" rendered="#{icon == 'snowfall'}">
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+        <div class="snow">
+            <div class="range1">
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+            </div>
+            <div class="range2">
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+            </div>
+            <div class="range3">
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+                <div class="snowflake"></div>
+            </div>
+        </div>
+    </h:panelGroup>
+    <h:panelGroup styleClass="icon storm" layout="block" rendered="#{icon == 'storm'}">
+        <div class="cloud">
+            <div class="base"></div>
+            <div class="bubble1"></div>
+            <div class="bubble2"></div>
+            <div class="baseShadow"></div>
+            <div class="bubble1Shadow"></div>
+            <div class="bubble2Shadow"></div>
+        </div>
+        <div class="lightning">
+            <div class="form">
+                <div class="top"></div>
+                <div class="middle"></div>
+                <div class="tail"></div>
+            </div>
+            <div class="shadow">
+                <div class="top"></div>
+                <div class="middle"></div>
+                <div class="tail"></div>
+            </div>
+        </div>
+    </h:panelGroup>
+</cc:implementation>
+</html>

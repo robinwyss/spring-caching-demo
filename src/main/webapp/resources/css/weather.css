@@ -51,6 +51,10 @@ input[type=text]
 {
     font-size: 100%;
 }
+.hidden
+{
+    display: none;
+}
 
 /* Styling by weather code */
 

@@ -1,16 +1,11 @@
 package ch.robinwyss.presentation.model;
 
 import ch.robinwyss.data.weather.WeatherData;
-import org.springframework.context.annotation.Scope;
-
-import javax.inject.Named;
 
 /**
  * @author rowyss
  *         Date: 15.11.11 Time: 19:39
  */
-@Named
-@Scope("session")
 public class WeatherModel
 {
 	private WeatherData weatherData;

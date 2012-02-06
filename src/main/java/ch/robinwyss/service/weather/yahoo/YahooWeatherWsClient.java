@@ -6,6 +6,8 @@ import ch.robinwyss.data.weather.WeatherData;
 import ch.robinwyss.service.weather.WeatherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Scope;
 import org.xml.sax.SAXException;
@@ -41,13 +43,13 @@ public class YahooWeatherWsClient implements WeatherService
 		try
 		{
 			String requestUrl = createRequestUrl(woeid, unit.getSymbol());
-			LOG.info("request URL:{} ",requestUrl );
+			LOG.info("request URL:{} ", requestUrl);
 			URL url = new URL(requestUrl);
 			URLConnection connection = url.openConnection();
 			InputStream inputStream = connection.getInputStream();
 			System.out.println(connection);
 			SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
-			parser.parse(inputStream, new YahooWeatherResponseHandler(weatherData) );
+			parser.parse(inputStream, new YahooWeatherResponseHandler(weatherData));
 		} catch (IOException e)
 		{
 			e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -59,6 +61,19 @@ public class YahooWeatherWsClient implements WeatherService
 			e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
 		}
 		return weatherData;
+	}
+
+	@CachePut(value = "forecast", key = "#woeid")
+	public WeatherData updateWeather(String woeid, Unit unit, long lastUpdate)
+	{
+		return null;
+	}
+
+	@CacheEvict(value = "forecast", key = "#woeid")
+	public WeatherData clearWeather(String woeid, Unit unit)
+
+	{
+		return null;
 	}
 
 	private String createRequestUrl(String woeid, String unit)

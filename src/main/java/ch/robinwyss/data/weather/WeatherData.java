@@ -1,5 +1,7 @@
 package ch.robinwyss.data.weather;
 
+import ch.robinwyss.common.enums.WeatherIcon;
+
 /**
  * @author rowyss
  *         Date: 15.11.11 Time: 19:36
@@ -10,6 +12,8 @@ public class WeatherData
 	private Units units;
 	private Astronomy astronomy;
 	private Condition condition;
+	private WeatherIcon icon;
+	private long time;
 
 	public Astronomy getAstronomy()
 	{
@@ -49,5 +53,25 @@ public class WeatherData
 	public void setCondition(Condition condition)
 	{
 		this.condition = condition;
+	}
+
+	public WeatherIcon getIcon()
+	{
+		return icon;
+	}
+
+	public void setIcon(WeatherIcon icon)
+	{
+		this.icon = icon;
+	}
+
+	public long getTime()
+	{
+		return time;
+	}
+
+	public void setTime(long time)
+	{
+		this.time = time;
 	}
 }

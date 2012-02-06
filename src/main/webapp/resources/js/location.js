@@ -10,26 +10,31 @@ function locationFound(position)
 {
     var longitude = position.coords.longitude;
     var latitude = position.coords.latitude;
-    var longitudeField = document.getElementById('searchForm:longitude');
-    var latitudeField = document.getElementById('searchForm:latitude');
-    longitudeField.value = longitude;
-    latitudeField.value = latitude;
-    //alert(" Position found longitude: " + longitude + " latitude: " + latitude);
-    document.getElementById('searchForm:searchButton').click();
+    $.ajax({
+        url:'/weather/search/' + latitude + '/' + longitude + '/',
+        success:function (data)
+        {
+            $('#nowcast').fadeIn('slow', function ()
+            {
+                $('.loadMessage').fadeOut('fast', function ()
+                {
+                });
+            });
+            $("#location").append(data.location.city + ', ' + data.location.country);
+            $("#temperature").append(data.condition.temperature);
+            $("#condition").append(data.condition.text);
+            $("#time").append(data.time + 'ms');
+        }
+    });
+
 }
 function locationUnavailable(error)
 {
     alert("could no get location " + error);
 }
 
-function showLocationInput()
+function enterEditMode(element)
 {
-    document.getElementById('weatherForm:locationOutput').className = 'hidden';
-    document.getElementById('weatherForm:changeButton').className = 'hidden';
-    document.getElementById('weatherForm:locationInput').className = '';
-}
-
-function enterEditMode(element){
     element.class = 'edit';
 }
 
