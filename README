@@ -1,4 +1,3 @@
-This is a simple demo application, which uses the new cache abstraction introduced in spring 3.1. It's a JSF web application which calls two web services: the yahoo place finder api and the yahoo weather api. Both web services are cached using the spring cacheable annotations.
+This is a simple demo application, which uses the new cache abstraction introduced in spring 3.1. The web application which calls two web services: the yahoo place finder api and the yahoo weather api. Both web services are cached using the spring cacheable annotations.
 The geolocation api is used to retrieve the the users location, the Yahoo Place Finder API provides the woeid for the location based on the coordinates. Then the weather is retrieved using the Yahoo Weather API.
 
-Note: JDK 7 is required to compile the application.
