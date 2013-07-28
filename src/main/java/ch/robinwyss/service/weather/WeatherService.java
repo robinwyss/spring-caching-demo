@@ -1,7 +1,6 @@
 package ch.robinwyss.service.weather;
 
-import ch.robinwyss.common.enums.Unit;
-import ch.robinwyss.data.weather.WeatherData;
+import ch.robinwyss.data.weather.openweather.Condition;
 
 /**
  * @author rowyss
@@ -10,6 +9,6 @@ import ch.robinwyss.data.weather.WeatherData;
 public interface WeatherService
 {
 
-	WeatherData getWeather(String woeid, Unit unit);
+	Condition getWeather(String latitude, String longitude);
 
 }

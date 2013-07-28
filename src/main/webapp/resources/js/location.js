@@ -20,10 +20,10 @@ function locationFound(position)
                 {
                 });
             });
-            $("#location").append(data.location.city + ', ' + data.location.country);
-            $("#temperature").append(data.condition.temperature);
-            $("#condition").append(data.condition.text);
-            $("#time").append(data.time + 'ms');
+            $("#location").append(data.name);
+            $("#temperature").append(data.main.temp);
+            $("#condition").append(data.weather[0].description);
+//            $("#time").append(data.time + 'ms');
         }
     });
 
